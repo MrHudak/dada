@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.mapper.ContentMapper">
+
+    <resultMap type="Content" id="ContentResult">
+        <result property="id"    column="id"    />
+        <result property="categoryid"    column="categoryid"    />
+        <result property="title"    column="title"    />
+        <result property="subtitle"    column="subtitle"    />
+        <result property="titledesc"    column="titledesc"    />
+        <result property="url"    column="url"    />
+        <result property="pic"    column="pic"    />
+        <result property="pic2"    column="pic2"    />
+        <result property="content"    column="content"    />
+    </resultMap>
+
+	<sql id="selectContentVo">
+        select id, categoryid, title, subtitle, titledesc, url, pic, pic2, content from content
+    </sql>
+
+    <select id="selectContentList" parameterType="Content" resultMap="ContentResult">
+        <include refid="selectContentVo"/>
+        <where>
+            <if test="id != null "> and id = #{id}</if>
+             <if test="categoryid != null "> and categoryid = #{categoryid}</if>
+             <if test="title != null  and title != '' "> and title = #{title}</if>
+             <if test="subtitle != null  and subtitle != '' "> and subtitle = #{subtitle}</if>
+             <if test="titledesc != null  and titledesc != '' "> and titledesc = #{titledesc}</if>
+             <if test="url != null  and url != '' "> and url = #{url}</if>
+             <if test="pic != null  and pic != '' "> and pic = #{pic}</if>
+             <if test="pic2 != null  and pic2 != '' "> and pic2 = #{pic2}</if>
+             <if test="content != null  and content != '' "> and content = #{content}</if>
+         </where>
+    </select>
+
+    <select id="selectContentById" parameterType="Long" resultMap="ContentResult">
+        <include refid="selectContentVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertContent" parameterType="Content" useGeneratedKeys="true" keyProperty="id">
+        insert into content
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="categoryid != null  ">categoryid,</if>
+			<if test="title != null  and title != ''  ">title,</if>
+			<if test="subtitle != null  and subtitle != ''  ">subtitle,</if>
+			<if test="titledesc != null  and titledesc != ''  ">titledesc,</if>
+			<if test="url != null  and url != ''  ">url,</if>
+			<if test="pic != null  and pic != ''  ">pic,</if>
+			<if test="pic2 != null  and pic2 != ''  ">pic2,</if>
+			<if test="content != null  and content != ''  ">content,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="categoryid != null  ">#{categoryid},</if>
+			<if test="title != null  and title != ''  ">#{title},</if>
+			<if test="subtitle != null  and subtitle != ''  ">#{subtitle},</if>
+			<if test="titledesc != null  and titledesc != ''  ">#{titledesc},</if>
+			<if test="url != null  and url != ''  ">#{url},</if>
+			<if test="pic != null  and pic != ''  ">#{pic},</if>
+			<if test="pic2 != null  and pic2 != ''  ">#{pic2},</if>
+			<if test="content != null  and content != ''  ">#{content},</if>
+         </trim>
+    </insert>
+
+    <update id="updateContent" parameterType="Content">
+        update content
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="categoryid != null  ">categoryid = #{categoryid},</if>
+            <if test="title != null  and title != ''  ">title = #{title},</if>
+            <if test="subtitle != null  and subtitle != ''  ">subtitle = #{subtitle},</if>
+            <if test="titledesc != null  and titledesc != ''  ">titledesc = #{titledesc},</if>
+            <if test="url != null  and url != ''  ">url = #{url},</if>
+            <if test="pic != null  and pic != ''  ">pic = #{pic},</if>
+            <if test="pic2 != null  and pic2 != ''  ">pic2 = #{pic2},</if>
+            <if test="content != null  and content != ''  ">content = #{content},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteContentById" parameterType="Long">
+        delete from content where id = #{id}
+    </delete>
+
+    <delete id="deleteContentByIds" parameterType="String">
+        delete from content where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

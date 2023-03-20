@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://manager.chinasofti.com/lib/jquery/1.9.1/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url : "http://manager.chinasofti.com/lib/jsonp/data.jsp",
+		dataType : "jsonp",
+		type : "GET",
+		success : function(data){
+			alert(data.abc);
+		}
+	});
+});
+</script>
+</head>
+<body>
+asdfasdf
+</body>
+</html>

@@ -1,0 +1,20 @@
+# 端口号
+server:
+  port: 8080
+spring:
+  application:
+    name: chinasofti-usermanager
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chinasoftishop?serverTimezone=UTC
+    username: root
+    password: root
+  # mybatis基础配置
+mybatis:
+  type-aliases-package: com.chinasofti.domain
+  mapper-locations: classpath:mappers/*.xml
+  # 日志信息配置
+logging:
+  level:
+    com.chinasofti: debug
+    org.springframework: warn

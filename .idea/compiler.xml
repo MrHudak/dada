@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="chinasofti-manager-web" />
+        <module name="chinasofti-usermanager" />
+        <module name="chinasofti-common" />
+        <module name="chinasofti.api" />
+        <module name="chinasofti-sso-service" />
+        <module name="chinasofti-front-web" />
+        <module name="chinasofti-search-service" />
+        <module name="chinasofti-eureka-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="chinasofti-order" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="chinasofti-common" options="-parameters" />
+      <module name="chinasofti-eureka-server" options="-parameters" />
+      <module name="chinasofti-front-web" options="-parameters" />
+      <module name="chinasofti-manager-web" options="-parameters" />
+      <module name="chinasofti-order" options="-parameters" />
+      <module name="chinasofti-parent" options="-parameters" />
+      <module name="chinasofti-search-service" options="-parameters" />
+      <module name="chinasofti-sso-service" options="-parameters" />
+      <module name="chinasofti-usermanager" options="-parameters" />
+      <module name="chinasofti.api" options="-parameters" />
+    </option>
+  </component>
+</project>

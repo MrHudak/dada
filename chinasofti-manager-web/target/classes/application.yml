@@ -1,0 +1,59 @@
+# 端口号
+server:
+  port: 8101
+spring:
+  application:
+    name: chinasofti-manager-web
+    #配置freemarker
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chinasoftishop?serverTimezone=UTC
+    username: root
+    password: root
+  profiles:
+    active: fdfs,url,redis
+  rabbitmq:
+    username: chinasofti
+    password: 123456
+    host: 8.130.72.180
+    virtual-host: /chinsofti
+    port: 5672
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 50MB
+
+#    # 热部署
+#  devtools:
+#    restart:
+#      # 热部署开关
+#    enable: true
+
+  mvc:
+      hiddenmethod:
+        filter:
+          enabled: true
+  # mybatis基础配置
+mybatis:
+  type-aliases-package: com.chinasofti.domain
+  mapper-locations: classpath:mappers/*.xml
+  # 日志信息配置
+logging:
+  level:
+    com.chinasofti: debug
+    org.springframework: warn
+#    server:
+#      port: 8000
+#    spring:
+#      application:
+#        name: eureka-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka/

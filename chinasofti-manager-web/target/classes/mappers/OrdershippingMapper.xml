@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.mapper.OrdershippingMapper">
+
+    <resultMap type="Ordershipping" id="OrdershippingResult">
+        <result property="orderId"    column="orderId"    />
+        <result property="receiverName"    column="receiverName"    />
+        <result property="receiverPhone"    column="receiverPhone"    />
+        <result property="receiverMobile"    column="receiverMobile"    />
+        <result property="receiverState"    column="receiverState"    />
+        <result property="receiverCity"    column="receiverCity"    />
+        <result property="receiverDistrict"    column="receiverDistrict"    />
+        <result property="receiverAddress"    column="receiverAddress"    />
+        <result property="receiverZip"    column="receiverZip"    />
+        <result property="created"    column="created"    />
+        <result property="updated"    column="updated"    />
+    </resultMap>
+
+	<sql id="selectOrdershippingVo">
+        select orderId, receiverName, receiverPhone, receiverMobile, receiverState, receiverCity, receiverDistrict, receiverAddress, receiverZip, created, updated from ordershipping
+    </sql>
+
+    <select id="selectOrdershippingList" parameterType="Ordershipping" resultMap="OrdershippingResult">
+        <include refid="selectOrdershippingVo"/>
+        <where>
+            <if test="orderId != null  and orderId != '' "> and orderId = #{orderId}</if>
+             <if test="receiverName != null  and receiverName != '' "> and receiverName = #{receiverName}</if>
+             <if test="receiverPhone != null  and receiverPhone != '' "> and receiverPhone = #{receiverPhone}</if>
+             <if test="receiverMobile != null  and receiverMobile != '' "> and receiverMobile = #{receiverMobile}</if>
+             <if test="receiverState != null  and receiverState != '' "> and receiverState = #{receiverState}</if>
+             <if test="receiverCity != null  and receiverCity != '' "> and receiverCity = #{receiverCity}</if>
+             <if test="receiverDistrict != null  and receiverDistrict != '' "> and receiverDistrict = #{receiverDistrict}</if>
+             <if test="receiverAddress != null  and receiverAddress != '' "> and receiverAddress = #{receiverAddress}</if>
+             <if test="receiverZip != null  and receiverZip != '' "> and receiverZip = #{receiverZip}</if>
+             <if test="created != null "> and created = #{created}</if>
+             <if test="updated != null "> and updated = #{updated}</if>
+         </where>
+    </select>
+
+    <select id="selectOrdershippingById" parameterType="String" resultMap="OrdershippingResult">
+        <include refid="selectOrdershippingVo"/>
+        where orderId = #{orderId}
+    </select>
+
+    <insert id="insertOrdershipping" parameterType="Ordershipping">
+        insert into ordershipping
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="orderId != null  and orderId != ''  ">orderId,</if>
+			<if test="receiverName != null  and receiverName != ''  ">receiverName,</if>
+			<if test="receiverPhone != null  and receiverPhone != ''  ">receiverPhone,</if>
+			<if test="receiverMobile != null  and receiverMobile != ''  ">receiverMobile,</if>
+			<if test="receiverState != null  and receiverState != ''  ">receiverState,</if>
+			<if test="receiverCity != null  and receiverCity != ''  ">receiverCity,</if>
+			<if test="receiverDistrict != null  and receiverDistrict != ''  ">receiverDistrict,</if>
+			<if test="receiverAddress != null  and receiverAddress != ''  ">receiverAddress,</if>
+			<if test="receiverZip != null  and receiverZip != ''  ">receiverZip,</if>
+			<if test="created != null  ">created,</if>
+			<if test="updated != null  ">updated,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="orderId != null  and orderId != ''  ">#{orderId},</if>
+			<if test="receiverName != null  and receiverName != ''  ">#{receiverName},</if>
+			<if test="receiverPhone != null  and receiverPhone != ''  ">#{receiverPhone},</if>
+			<if test="receiverMobile != null  and receiverMobile != ''  ">#{receiverMobile},</if>
+			<if test="receiverState != null  and receiverState != ''  ">#{receiverState},</if>
+			<if test="receiverCity != null  and receiverCity != ''  ">#{receiverCity},</if>
+			<if test="receiverDistrict != null  and receiverDistrict != ''  ">#{receiverDistrict},</if>
+			<if test="receiverAddress != null  and receiverAddress != ''  ">#{receiverAddress},</if>
+			<if test="receiverZip != null  and receiverZip != ''  ">#{receiverZip},</if>
+			<if test="created != null  ">#{created},</if>
+			<if test="updated != null  ">#{updated},</if>
+         </trim>
+    </insert>
+
+    <update id="updateOrdershipping" parameterType="Ordershipping">
+        update ordershipping
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="receiverName != null  and receiverName != ''  ">receiverName = #{receiverName},</if>
+            <if test="receiverPhone != null  and receiverPhone != ''  ">receiverPhone = #{receiverPhone},</if>
+            <if test="receiverMobile != null  and receiverMobile != ''  ">receiverMobile = #{receiverMobile},</if>
+            <if test="receiverState != null  and receiverState != ''  ">receiverState = #{receiverState},</if>
+            <if test="receiverCity != null  and receiverCity != ''  ">receiverCity = #{receiverCity},</if>
+            <if test="receiverDistrict != null  and receiverDistrict != ''  ">receiverDistrict = #{receiverDistrict},</if>
+            <if test="receiverAddress != null  and receiverAddress != ''  ">receiverAddress = #{receiverAddress},</if>
+            <if test="receiverZip != null  and receiverZip != ''  ">receiverZip = #{receiverZip},</if>
+            <if test="created != null  ">created = #{created},</if>
+            <if test="updated != null  ">updated = #{updated},</if>
+        </trim>
+        where orderId = #{orderId}
+    </update>
+
+	<delete id="deleteOrdershippingById" parameterType="String">
+        delete from ordershipping where orderId = #{orderId}
+    </delete>
+
+    <delete id="deleteOrdershippingByIds" parameterType="String">
+        delete from ordershipping where orderId in
+        <foreach item="orderId" collection="array" open="(" separator="," close=")">
+            #{orderId}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,30 @@
+# 端口号
+server:
+  port: 8181
+spring:
+  application:
+    name: chinasofti-api
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chinasoftishop?serverTimezone=UTC
+    username: root
+    password: root
+
+  # mybatis基础配置
+mybatis:
+  type-aliases-package: com.chinasofti.domain
+  mapper-locations: classpath:mappers/*.xml
+  # 日志信息配置
+logging:
+  level:
+    com.chinasofti: debug
+    org.springframework: warn
+#    server:
+#      port: 8000
+#    spring:
+#      application:
+#        name: eureka-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka/

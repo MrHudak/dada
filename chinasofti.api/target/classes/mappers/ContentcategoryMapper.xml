@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.mapper.ContentcategoryMapper">
+
+    <resultMap type="Contentcategory" id="ContentcategoryResult">
+        <result property="id"    column="id"    />
+        <result property="parentid"    column="parentid"    />
+        <result property="name"    column="name"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+
+	<sql id="selectContentcategoryVo">
+        select id, parentid, name, status from contentcategory
+    </sql>
+
+    <select id="selectContentcategoryList" parameterType="Contentcategory" resultMap="ContentcategoryResult">
+        <include refid="selectContentcategoryVo"/>
+        <where>
+            <if test="id != null "> and id = #{id}</if>
+             <if test="parentid != null "> and parentid = #{parentid}</if>
+             <if test="name != null  and name != '' "> and name = #{name}</if>
+             <if test="status != null "> and status = #{status}</if>
+         </where>
+    </select>
+
+    <select id="selectContentcategoryById" parameterType="Long" resultMap="ContentcategoryResult">
+        <include refid="selectContentcategoryVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertContentcategory" parameterType="Contentcategory" useGeneratedKeys="true" keyProperty="id">
+        insert into contentcategory
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="parentid != null  ">parentid,</if>
+			<if test="name != null  and name != ''  ">name,</if>
+			<if test="status != null  ">status,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="parentid != null  ">#{parentid},</if>
+			<if test="name != null  and name != ''  ">#{name},</if>
+			<if test="status != null  ">#{status},</if>
+         </trim>
+    </insert>
+
+    <update id="updateContentcategory" parameterType="Contentcategory">
+        update contentcategory
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="parentid != null  ">parentid = #{parentid},</if>
+            <if test="name != null  and name != ''  ">name = #{name},</if>
+            <if test="status != null  ">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteContentcategoryById" parameterType="Long">
+        delete from contentcategory where id = #{id}
+    </delete>
+
+    <delete id="deleteContentcategoryByIds" parameterType="String">
+        delete from contentcategory where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "CHINASOFTI_IMAGE_URL",
+      "type": "java.lang.String",
+      "description": "Description for CHINASOFTI_IMAGE_URL."
+    }
+
+  ] }

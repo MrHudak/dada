@@ -1,0 +1,33 @@
+# 端口号
+server:
+  port: 8102
+spring:
+  application:
+    name: chinasofti-front-web
+
+  main:
+    allow-circular-references: true
+
+
+
+  #配置freemarker
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+   ##设置所有的request请求的数据更新到model中
+    expose-request-attributes: false
+    settings:
+   # 解决空异常
+       classic_compatible: true
+  profiles:
+    active: url
+   # 日志信息配置
+logging:
+  level:
+    com.chinasofti: debug
+    org.springframework: warn
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka/

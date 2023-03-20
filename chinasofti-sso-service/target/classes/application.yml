@@ -1,0 +1,30 @@
+# 端口号
+server:
+  port: 8185
+spring:
+  application:
+    name: sso-service
+    #配置freemarker
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chinasoftishop?serverTimezone=UTC
+    username: root
+    password: root
+  profiles:
+    active: redis
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  # mybatis基础配置
+mybatis:
+  type-aliases-package: com.chinasofti.domain
+  mapper-locations: classpath:mappers/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka/

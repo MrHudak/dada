@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.mapper.CartMapper">
+
+    <resultMap type="Cart" id="CartResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="userId"    />
+        <result property="productId"    column="productId"    />
+        <result property="productTitle"    column="productTitle"    />
+        <result property="productImage"    column="productImage"    />
+        <result property="productPrice"    column="productPrice"    />
+        <result property="num"    column="num"    />
+        <result property="created"    column="created"    />
+        <result property="updated"    column="updated"    />
+    </resultMap>
+
+	<sql id="selectCartVo">
+        select id, userId, productId, productTitle, productImage, productPrice, num, created, updated from cart
+    </sql>
+
+    <select id="selectCartList" parameterType="Cart" resultMap="CartResult">
+        <include refid="selectCartVo"/>
+        <where>
+            <if test="id != null "> and id = #{id}</if>
+             <if test="userId != null "> and userId = #{userId}</if>
+             <if test="productId != null "> and productId = #{productId}</if>
+             <if test="productTitle != null  and productTitle != '' "> and productTitle = #{productTitle}</if>
+             <if test="productImage != null  and productImage != '' "> and productImage = #{productImage}</if>
+             <if test="productPrice != null "> and productPrice = #{productPrice}</if>
+             <if test="num != null "> and num = #{num}</if>
+             <if test="created != null "> and created = #{created}</if>
+             <if test="updated != null "> and updated = #{updated}</if>
+         </where>
+    </select>
+
+    <select id="selectCartById" parameterType="Long" resultMap="CartResult">
+        <include refid="selectCartVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertCart" parameterType="Cart" useGeneratedKeys="true" keyProperty="id">
+        insert into cart
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null  ">userId,</if>
+			<if test="productId != null  ">productId,</if>
+			<if test="productTitle != null  and productTitle != ''  ">productTitle,</if>
+			<if test="productImage != null  and productImage != ''  ">productImage,</if>
+			<if test="productPrice != null  ">productPrice,</if>
+			<if test="num != null  ">num,</if>
+			<if test="created != null  ">created,</if>
+			<if test="updated != null  ">updated,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userId != null  ">#{userId},</if>
+			<if test="productId != null  ">#{productId},</if>
+			<if test="productTitle != null  and productTitle != ''  ">#{productTitle},</if>
+			<if test="productImage != null  and productImage != ''  ">#{productImage},</if>
+			<if test="productPrice != null  ">#{productPrice},</if>
+			<if test="num != null  ">#{num},</if>
+			<if test="created != null  ">#{created},</if>
+			<if test="updated != null  ">#{updated},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCart" parameterType="Cart">
+        update cart
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null  ">userId = #{userId},</if>
+            <if test="productId != null  ">productId = #{productId},</if>
+            <if test="productTitle != null  and productTitle != ''  ">productTitle = #{productTitle},</if>
+            <if test="productImage != null  and productImage != ''  ">productImage = #{productImage},</if>
+            <if test="productPrice != null  ">productPrice = #{productPrice},</if>
+            <if test="num != null  ">num = #{num},</if>
+            <if test="created != null  ">created = #{created},</if>
+            <if test="updated != null  ">updated = #{updated},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteCartById" parameterType="Long">
+        delete from cart where id = #{id}
+    </delete>
+
+    <delete id="deleteCartByIds" parameterType="String">
+        delete from cart where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

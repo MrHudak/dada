@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.mapper.OrderproductMapper">
+
+    <resultMap type="Orderproduct" id="OrderproductResult">
+        <result property="productId"    column="productId"    />
+        <result property="orderId"    column="orderId"    />
+        <result property="num"    column="num"    />
+        <result property="title"    column="title"    />
+        <result property="price"    column="price"    />
+        <result property="totalFee"    column="totalFee"    />
+        <result property="imagePath"    column="imagePath"    />
+    </resultMap>
+
+	<sql id="selectOrderproductVo">
+        select productId, orderId, num, title, price, totalFee, imagePath from orderproduct
+    </sql>
+
+    <select id="selectOrderproductList" parameterType="Orderproduct" resultMap="OrderproductResult">
+        <include refid="selectOrderproductVo"/>
+        <where>
+            <if test="productId != null  and productId != '' "> and productId = #{productId}</if>
+             <if test="orderId != null  and orderId != '' "> and orderId = #{orderId}</if>
+             <if test="num != null "> and num = #{num}</if>
+             <if test="title != null  and title != '' "> and title = #{title}</if>
+             <if test="price != null "> and price = #{price}</if>
+             <if test="totalFee != null "> and totalFee = #{totalFee}</if>
+             <if test="imagePath != null  and imagePath != '' "> and imagePath = #{imagePath}</if>
+         </where>
+    </select>
+
+    <select id="selectOrderproductById" parameterType="String" resultMap="OrderproductResult">
+        <include refid="selectOrderproductVo"/>
+        where productId = #{productId}
+    </select>
+
+    <insert id="insertOrderproduct" parameterType="Orderproduct">
+        insert into orderproduct
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="productId != null  and productId != ''  ">productId,</if>
+			<if test="orderId != null  and orderId != ''  ">orderId,</if>
+			<if test="num != null  ">num,</if>
+			<if test="title != null  and title != ''  ">title,</if>
+			<if test="price != null  ">price,</if>
+			<if test="totalFee != null  ">totalFee,</if>
+			<if test="imagePath != null  and imagePath != ''  ">imagePath,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="productId != null  and productId != ''  ">#{productId},</if>
+			<if test="orderId != null  and orderId != ''  ">#{orderId},</if>
+			<if test="num != null  ">#{num},</if>
+			<if test="title != null  and title != ''  ">#{title},</if>
+			<if test="price != null  ">#{price},</if>
+			<if test="totalFee != null  ">#{totalFee},</if>
+			<if test="imagePath != null  and imagePath != ''  ">#{imagePath},</if>
+         </trim>
+    </insert>
+
+    <update id="updateOrderproduct" parameterType="Orderproduct">
+        update orderproduct
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="orderId != null  and orderId != ''  ">orderId = #{orderId},</if>
+            <if test="num != null  ">num = #{num},</if>
+            <if test="title != null  and title != ''  ">title = #{title},</if>
+            <if test="price != null  ">price = #{price},</if>
+            <if test="totalFee != null  ">totalFee = #{totalFee},</if>
+            <if test="imagePath != null  and imagePath != ''  ">imagePath = #{imagePath},</if>
+        </trim>
+        where productId = #{productId}
+    </update>
+
+	<delete id="deleteOrderproductById" parameterType="String">
+        delete from orderproduct where productId = #{productId}
+    </delete>
+
+    <delete id="deleteOrderproductByIds" parameterType="String">
+        delete from orderproduct where productId in
+        <foreach item="productId" collection="array" open="(" separator="," close=")">
+            #{productId}
+        </foreach>
+    </delete>
+
+</mapper>

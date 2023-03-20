@@ -1,0 +1,42 @@
+# 端口号
+server:
+  port: 8187
+  servlet:
+    context-path: /
+
+
+spring:
+  application:
+    name: chinasofti-search-web
+  elasticsearch:
+    uris: http://116.62.133.135:9200
+    #配置freemarker
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+    expose-request-attributes: false
+    settings:
+      classic_compatible: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chinasoftishop?serverTimezone=UTC
+    username: root
+    password: root
+  profiles:
+    active: redis
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  # mybatis基础配置
+#mybatis:
+#  type-aliases-package: com.chinasofti.domain
+#  mapper-locations: classpath:mappers/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka/

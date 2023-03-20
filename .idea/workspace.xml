@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="38d46089-dfa3-40ef-9032-ebf74cb28d81" name="Changes" comment="nihao">
+      <change afterPath="$PROJECT_DIR$/chinasofti-manager-web/src/main/java/com/chinasofti/config/RabbitMQConfig.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="localRepository" value="C:\Users\28477\.m2\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../javathing/da/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="C:\Users\28477\Documents\Tencent Files\2847717479\FileRecv\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="19" />
+  </component>
+  <component name="ProjectId" id="2MUl1rXSow0BtHpr7tru2d6lYA2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../taoshop" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.38505748" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\dada\chinasofti-parent\chinasofti-order\src\main\resources" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-order\src\main\java" />
+      <recent name="D:\dada\chinasofti-parent" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-search-service\src\main\resources" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-search-service\src\main\resources\mappers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dada\chinasofti-parent\chinasofti-manager-web\src\main\java\com\chinasofti\service" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-usermanager\src\main\java\com\chinasofti\service" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-usermanager\src\main\resources\mappers" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-usermanager\src\main\java\com\chinasofti\mapper" />
+      <recent name="D:\dada\chinasofti-parent\chinasofti-usermanager\src\main\java\com\chinasofti\dumain" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.chinasofti.config" />
+      <recent name="com.chinasofti.interceptor" />
+      <recent name="com.chinasofti.mapper" />
+      <recent name="com.chinasofti.domain" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install:install-file -Dfile=/xx/xx/libs/Onet/sdk.jar -DgroupId=zom.bbd.onet -DartifactId=onet-parent -Dversion=1.0-SANPSHOT -Dpackaging=jar" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SearchWebApplication">
+    <configuration name="ShopSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chinasofti-search-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chinasofti.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chinasofti" />
+      <option name="MAIN_CLASS_NAME" value="com.chinasofti.ShopSearch" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopSearch.elastictest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chinasofti-search-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chinasofti.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chinasofti" />
+      <option name="MAIN_CLASS_NAME" value="com.chinasofti.ShopSearch" />
+      <option name="METHOD_NAME" value="elastictest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChinasoftiEurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chinasofti-eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.ChinasoftiEurekaServerApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChinasoftiManagerWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chinasofti-manager-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.ChinasoftiManagerWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChinasoftiParentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chinasofti-parent" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.ChinasoftiParentApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChinasoftiUserManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chinasofti-usermanager" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.ChinasoftiUserManagerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chinasofti-order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.order.OrderWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="chinasofti-search-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chinasofti.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.SearchWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="chinasofti.api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chinasofti.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.ShopAPIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopFrontServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="chinasofti-front-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chinasofti.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.ShopFrontServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SsoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chinasofti-sso-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chinasofti.SsoServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ShopSearch" />
+      <item itemvalue="JUnit.ShopSearch.elastictest" />
+      <item itemvalue="Spring Boot.ChinasoftiEurekaServerApplication" />
+      <item itemvalue="Spring Boot.ChinasoftiParentApplication" />
+      <item itemvalue="Spring Boot.ChinasoftiUserManagerApplication" />
+      <item itemvalue="Spring Boot.SsoServiceApplication" />
+      <item itemvalue="Spring Boot.OrderWebApplication" />
+      <item itemvalue="Spring Boot.ChinasoftiManagerWebApplication" />
+      <item itemvalue="Spring Boot.ShopAPIApplication" />
+      <item itemvalue="Spring Boot.ShopFrontServiceApplication" />
+      <item itemvalue="Spring Boot.SearchWebApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ShopFrontServiceApplication" />
+        <item itemvalue="Spring Boot.ShopAPIApplication" />
+        <item itemvalue="Spring Boot.SearchWebApplication" />
+        <item itemvalue="JUnit.ShopSearch.elastictest" />
+        <item itemvalue="JUnit.ShopSearch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38d46089-dfa3-40ef-9032-ebf74cb28d81" name="Changes" comment="" />
+      <created>1677829831456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677829831456</updated>
+      <workItem from="1677829832646" duration="9417000" />
+      <workItem from="1677843559710" duration="3828000" />
+      <workItem from="1677893996307" duration="3541000" />
+      <workItem from="1677897702713" duration="4588000" />
+      <workItem from="1677916594079" duration="6049000" />
+      <workItem from="1678235797128" duration="6213000" />
+      <workItem from="1678244535611" duration="2285000" />
+      <workItem from="1678326133255" duration="3356000" />
+      <workItem from="1678672731576" duration="1645000" />
+      <workItem from="1678674418172" duration="23926000" />
+      <workItem from="1678710636744" duration="1519000" />
+      <workItem from="1678712216422" duration="7987000" />
+      <workItem from="1678753729957" duration="5393000" />
+      <workItem from="1678759526599" duration="2572000" />
+      <workItem from="1678762170156" duration="713000" />
+      <workItem from="1678762939443" duration="2806000" />
+      <workItem from="1678771684561" duration="7841000" />
+      <workItem from="1678842657629" duration="10770000" />
+      <workItem from="1678893147323" duration="4262000" />
+      <workItem from="1678926863927" duration="6781000" />
+      <workItem from="1678942500232" duration="879000" />
+      <workItem from="1678943531766" duration="14812000" />
+      <workItem from="1678963631961" duration="17678000" />
+      <workItem from="1679146654760" duration="20000" />
+      <workItem from="1679280023546" duration="90000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

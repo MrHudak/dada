@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.mapper.CategoryMapper">
+
+    <resultMap type="Category" id="CategoryResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="sortOrder"    column="sort_order"    />
+        <result property="showInNav"    column="show_in_nav"    />
+        <result property="isShow"    column="is_show"    />
+        <result property="grade"    column="grade"    />
+        <result property="filterAttr"    column="filter_attr"    />
+        <result property="isTopStyle"    column="is_top_style"    />
+        <result property="topStyleTpl"    column="top_style_tpl"    />
+        <result property="styleIcon"    column="style_icon"    />
+        <result property="catIcon"    column="cat_icon"    />
+        <result property="isTopShow"    column="is_top_show"    />
+        <result property="categoryLinks"    column="category_links"    />
+        <result property="categoryTopic"    column="category_topic"    />
+        <result property="catAliasName"    column="cat_alias_name"    />
+        <result property="commissionRate"    column="commission_rate"    />
+        <result property="touchIcon"    column="touch_icon"    />
+    </resultMap>
+
+	<sql id="selectCategoryVo">
+        select id, name, parent_id, sort_order, show_in_nav, is_show, grade, filter_attr, is_top_style, top_style_tpl, style_icon, cat_icon, is_top_show, category_links, category_topic, cat_alias_name, commission_rate, touch_icon from category
+    </sql>
+
+    <select id="selectCategoryList" parameterType="Category" resultMap="CategoryResult">
+        <include refid="selectCategoryVo"/>
+        <where>
+            <if test="id != null "> and id = #{id}</if>
+             <if test="name != null  and name != '' "> and name = #{name}</if>
+             <if test="parentId != null "> and parent_id = #{parentId}</if>
+             <if test="sortOrder != null "> and sort_order = #{sortOrder}</if>
+             <if test="showInNav != null "> and show_in_nav = #{showInNav}</if>
+             <if test="isShow != null "> and is_show = #{isShow}</if>
+             <if test="grade != null "> and grade = #{grade}</if>
+             <if test="filterAttr != null  and filterAttr != '' "> and filter_attr = #{filterAttr}</if>
+             <if test="isTopStyle != null "> and is_top_style = #{isTopStyle}</if>
+             <if test="topStyleTpl != null  and topStyleTpl != '' "> and top_style_tpl = #{topStyleTpl}</if>
+             <if test="styleIcon != null  and styleIcon != '' "> and style_icon = #{styleIcon}</if>
+             <if test="catIcon != null  and catIcon != '' "> and cat_icon = #{catIcon}</if>
+             <if test="isTopShow != null "> and is_top_show = #{isTopShow}</if>
+             <if test="categoryLinks != null  and categoryLinks != '' "> and category_links = #{categoryLinks}</if>
+             <if test="categoryTopic != null  and categoryTopic != '' "> and category_topic = #{categoryTopic}</if>
+             <if test="catAliasName != null  and catAliasName != '' "> and cat_alias_name = #{catAliasName}</if>
+             <if test="commissionRate != null "> and commission_rate = #{commissionRate}</if>
+             <if test="touchIcon != null  and touchIcon != '' "> and touch_icon = #{touchIcon}</if>
+         </where>
+    </select>
+
+    <select id="selectCategoryById" parameterType="Long" resultMap="CategoryResult">
+        <include refid="selectCategoryVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertCategory" parameterType="Category" useGeneratedKeys="true" keyProperty="id">
+        insert into category
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="name != null  and name != ''  ">name,</if>
+			<if test="parentId != null  ">parent_id,</if>
+			<if test="sortOrder != null  ">sort_order,</if>
+			<if test="showInNav != null  ">show_in_nav,</if>
+			<if test="isShow != null  ">is_show,</if>
+			<if test="grade != null  ">grade,</if>
+			<if test="filterAttr != null  and filterAttr != ''  ">filter_attr,</if>
+			<if test="isTopStyle != null  ">is_top_style,</if>
+			<if test="topStyleTpl != null  and topStyleTpl != ''  ">top_style_tpl,</if>
+			<if test="styleIcon != null  and styleIcon != ''  ">style_icon,</if>
+			<if test="catIcon != null  and catIcon != ''  ">cat_icon,</if>
+			<if test="isTopShow != null  ">is_top_show,</if>
+			<if test="categoryLinks != null  and categoryLinks != ''  ">category_links,</if>
+			<if test="categoryTopic != null  and categoryTopic != ''  ">category_topic,</if>
+			<if test="catAliasName != null  and catAliasName != ''  ">cat_alias_name,</if>
+			<if test="commissionRate != null  ">commission_rate,</if>
+			<if test="touchIcon != null  and touchIcon != ''  ">touch_icon,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="name != null  and name != ''  ">#{name},</if>
+			<if test="parentId != null  ">#{parentId},</if>
+			<if test="sortOrder != null  ">#{sortOrder},</if>
+			<if test="showInNav != null  ">#{showInNav},</if>
+			<if test="isShow != null  ">#{isShow},</if>
+			<if test="grade != null  ">#{grade},</if>
+			<if test="filterAttr != null  and filterAttr != ''  ">#{filterAttr},</if>
+			<if test="isTopStyle != null  ">#{isTopStyle},</if>
+			<if test="topStyleTpl != null  and topStyleTpl != ''  ">#{topStyleTpl},</if>
+			<if test="styleIcon != null  and styleIcon != ''  ">#{styleIcon},</if>
+			<if test="catIcon != null  and catIcon != ''  ">#{catIcon},</if>
+			<if test="isTopShow != null  ">#{isTopShow},</if>
+			<if test="categoryLinks != null  and categoryLinks != ''  ">#{categoryLinks},</if>
+			<if test="categoryTopic != null  and categoryTopic != ''  ">#{categoryTopic},</if>
+			<if test="catAliasName != null  and catAliasName != ''  ">#{catAliasName},</if>
+			<if test="commissionRate != null  ">#{commissionRate},</if>
+			<if test="touchIcon != null  and touchIcon != ''  ">#{touchIcon},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCategory" parameterType="Category">
+        update category
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null  and name != ''  ">name = #{name},</if>
+            <if test="parentId != null  ">parent_id = #{parentId},</if>
+            <if test="sortOrder != null  ">sort_order = #{sortOrder},</if>
+            <if test="showInNav != null  ">show_in_nav = #{showInNav},</if>
+            <if test="isShow != null  ">is_show = #{isShow},</if>
+            <if test="grade != null  ">grade = #{grade},</if>
+            <if test="filterAttr != null  and filterAttr != ''  ">filter_attr = #{filterAttr},</if>
+            <if test="isTopStyle != null  ">is_top_style = #{isTopStyle},</if>
+            <if test="topStyleTpl != null  and topStyleTpl != ''  ">top_style_tpl = #{topStyleTpl},</if>
+            <if test="styleIcon != null  and styleIcon != ''  ">style_icon = #{styleIcon},</if>
+            <if test="catIcon != null  and catIcon != ''  ">cat_icon = #{catIcon},</if>
+            <if test="isTopShow != null  ">is_top_show = #{isTopShow},</if>
+            <if test="categoryLinks != null  and categoryLinks != ''  ">category_links = #{categoryLinks},</if>
+            <if test="categoryTopic != null  and categoryTopic != ''  ">category_topic = #{categoryTopic},</if>
+            <if test="catAliasName != null  and catAliasName != ''  ">cat_alias_name = #{catAliasName},</if>
+            <if test="commissionRate != null  ">commission_rate = #{commissionRate},</if>
+            <if test="touchIcon != null  and touchIcon != ''  ">touch_icon = #{touchIcon},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteCategoryById" parameterType="Long">
+        delete from category where id = #{id}
+    </delete>
+
+    <delete id="deleteCategoryByIds" parameterType="String">
+        delete from category where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
